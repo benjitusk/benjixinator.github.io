@@ -1,4 +1,4 @@
-Class Ball {
+class Ball {
 
   
     this.x;
