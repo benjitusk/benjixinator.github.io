@@ -1,4 +1,4 @@
-/*let dropsA = [];
+let dropsA = [];
 let totalDrops = 500;
 
 function setup() {
@@ -18,7 +18,4 @@ function draw() {
 
   }
 
-}*/
-
-function setup() {createCanvas(windowWidth, windowHeight);}
-function draw()  {background(0);}
+}
