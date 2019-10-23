@@ -63,7 +63,7 @@ function backgroundSetup() {
     noFill();
     stroke(255);
     strokeWeight(7);
-    arc(mouseX, height / 2, repelRadius * 2, repelRadius * 2, 7 / 6 * PI, 11 / 6 * PI);
+    arc(mouseX, height * 2 / 3, repelRadius * 2, repelRadius * 2, 7 / 6 * PI, 11 / 6 * PI);
 
     stroke(255, 0, 0);
     line(0, height * 11 / 12, width, height * 11 / 12);
