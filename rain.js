@@ -39,7 +39,7 @@ function draw() {
             drop.fall();
             drop.show();
             
-            let umbrellaDist = dist(drop.pos.x, drop.pos.y, mouseX, height / 3);
+            let umbrellaDist = dist(drop.pos.x, drop.pos.y, mouseX, height * 2 / 3);
             if (umbrellaDist < repelRadius + drop.len) { // if the bottom of the drop is within repelRadius of the mouse
                 drop.repel();
             }
