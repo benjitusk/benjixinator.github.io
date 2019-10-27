@@ -1,6 +1,6 @@
 class Ball {
     constructor() {
-        this.xoff = 0;
+        this.xoff = random(0, 999999);
         this.r = 20;
         this.x = width / 2;
         this.y = (height * 11 / 12) - this.r;
