@@ -14,8 +14,9 @@ class Ball {
                 this.x = 10;
             } else if (this.x >= width) { // If the ball is in danger of going off the screen to the RIGHT>>
                 this.x = width - 10;
+                console.log(this.x);
             } else { // If the ball is in the <<CENTER>>
-                this.x += map(noise(this.xoff), 0, 1, -5, 7.1);
+                this.x += map(noise(this.xoff), 0, 1, -5, 6.8);
             }
         }
             noStroke();
