@@ -20,17 +20,11 @@ function setup() {
 
 function draw() {
     
-    if (scene === 0) {
-        background(0);
-        textSize(42);
-        fill(255);
-        textAlign(CENTER);
-        text("Welcome to...");
-        text("STAY DRY");
-    }
+
     
-    if (scene === 1) {
+
         backgroundSetup();
+	ball.update();
         ball.show();
         
         if (ball.health <= 0) gameOver();
@@ -51,28 +45,17 @@ function draw() {
             
         }
         
-    }
+    
 }
 
 function backgroundSetup() {
-    background(0);
-    fill(255);
-    textSize(60);
-    textAlign(LEFT);
-    text("TIME: ", 10, 10);
+    background(255);
     noFill();
-    stroke(255);
+    stroke(0);
     strokeWeight(7);
     arc(mouseX, height * 2 / 3, repelRadius * 2, repelRadius * 2, 7 / 6 * PI, 11 / 6 * PI);
 
-    stroke(255, 0, 0);
-    line(0, height * 11 / 12, width, height * 11 / 12);
     stroke(0, 255, 0);
     line(-10, height * 11 / 12, map(ball.health, 0, 100, 0, width), height * 11 / 12);
 }
 
-function gameOver() {
-    
-    running = false;
-
-}
