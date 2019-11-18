@@ -1,9 +1,8 @@
 class Drop {
     constructor () {
         this.pos = createVector(random(width), random(-height - 50, -50));
-        this.speed = random(5, 20);
-        this.len = random(10, 20);
-        this.c = color(random(255), random(255), random(255));
+	this.len = 5;
+	this.speed = 13;
     }
     
     fall() {
@@ -12,15 +11,14 @@ class Drop {
         if (this.pos.y > height) {
             // Randomize and reconstruct the drop
             this.pos = createVector(random(width), random(-height - 50, -50));
-            this.speed = random(5, 20);
-            this.len = random(10, 20);
-            this.c = color(random(255), random(255), random(255));
+
+
         }
         
     }
     
     show() {
-        stroke(this.c);
+        stroke(0, 200, 255);
         strokeWeight(5);
         line(this.pos.x, this.pos.y, this.pos.x, this.pos.y + this.len);
     }
