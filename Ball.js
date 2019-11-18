@@ -6,17 +6,17 @@ class Ball {
         this.y = (height * 11 / 12) - this.r;
         this.health = 100;
     }
-    
+
     show() {
         if (running) {
-            this.xoff += 0.1;
+            this.xoff += 0.1; // the smaller this number, the smoother the motion of the ball
             if (this.x <= 0) { // If the ball is in danger of going off the screen to the <<LEFT
                 this.x = 5;
             } else if (this.x >= width) { // If the ball is in danger of going off the screen to the RIGHT>>
                 this.x = width - 5;
                 console.log(this.x);
             } else { // If the ball is in the <<CENTER>>
-                this.x += map(noise(this.xoff), 0, 1, -5, 6.8);
+                this.x += map(noise(this.xoff), 0, 1, -5, 6.3);
             }
         }
             noStroke();
