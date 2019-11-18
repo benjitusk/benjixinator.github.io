@@ -8,7 +8,7 @@ class Drop {
     fall() {
         this.pos.y += this.speed;
         if (this.pos.y > height) {
-            // Randomize and reconstruct the drop
+            // Randomize the drop
             this.pos = createVector(random(width), random(-height - 50, -50));
         }
     }
