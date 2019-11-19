@@ -5,11 +5,11 @@ let ball;
 let running = true;
 let scene = 0;
 let totalDrops = 200;
-let sceneShift = 5;
 
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
+
     mouseX = width / 2;
     mouseY = height / 3;
     for (let i = 0; i < totalDrops; i++) {
@@ -17,16 +17,19 @@ function setup() {
     }
     ball = new Ball();
 
+
 }
 
 function draw() {
+    console.log("<= FRAME NUMBER");
     background(0);
+    textAlign(CENTER);
+     {
     if (scene === 0) { // Welcome
       ball.health = 100;
       noStroke();
       textSize(50);
       fill(255, 60, 60);
-      textAlign(CENTER);
       text("You are finally awake. That is good...", width / 2, (height / 2) - 42);
       text("Come, my child...", width / 2, (height / 2) + 42);
     }
@@ -34,7 +37,6 @@ function draw() {
     if (scene === 1) {
       textSize(36);
       fill(255);
-      textAlign(CENTER);
       text("I'm sorry, sir, I think this must be some sort of mistake.\nI don't know what's happening. I don't even know who you are! Where am I?", width / 2, (height / 2) - 42);
     }
 
@@ -50,14 +52,13 @@ function draw() {
     if (scene === 4) {
       textSize(50);
       fill(255, 60, 60);
-      text("You are The Chosen One! Everyone knows who you are!\nAs for who am I, I wouldn't dwell too long on that if I were you, for your own safety.\n\nThe hour is late, and the sun has set.\n\nLET US BEGIN...", width / 2, height / 2.5);
+      text("You are The Chosen One! Everyone knows who you are!\nAs for who am I, I wouldn't dwell too long on that\nif I were you, for your own safety.\n\nThe hour is late, and the sun has set.\n\nLET US BEGIN...", width / 2, height / 2.5);
     }
 
     if (scene === 5) { // How to
       textSize(50);
       fill(255, 60, 60);
-      // textAlign(CENTER);
-      text("The goal is simple enough; The umbrella is controlled by the mouse.\nDo you have what it takes to...\nSTAY DRY", width / 2, (height / 2) - 42);
+      text("The goal is simple enough:\nThe umbrella is controlled by the mouse.\nDo you have what it takes to...\nSTAY DRY", width / 2, (height / 2) - 42);
     }
 
     if (scene === 6) { // How to
@@ -65,6 +66,8 @@ function draw() {
       fill(255, 0, 0);
       text("...AND ALIVE...", width / 2, (height / 2) - 42);
     }
+
+  }
 
     if (scene === 7) { // Play Ball!
         backgroundSetup();
@@ -99,7 +102,7 @@ function draw() {
       noStroke();
       textSize(60);
       text("Paused...", width / 2, height / 2 - 30);
-      text("Press any key to continue", width / 2, height / 2 + 30);
+      // text("Click anywhere to continue", width / 2, height / 2 + 30);
     }
 
     if (scene === 9) { // Game Over!
@@ -108,18 +111,16 @@ function draw() {
       textSize(72)
       //text("GAME OVER", width / 2, height / 3 - 36);
       textSize(42);
-      text("You...\nYou have not cared for my treasured ball with enough care...\n and now...\n and now it is lost forever.\n\n\nYou will rue this day forever, fool...\nMark my words...", width / 2, height / 2 - 30);
+      text("You...\nYou have not cared for my treasured ball with enough care...\n and now...\n and now it is lost forever.\n\n\nYou will rue this day forever, fool...\nMark my words...", width / 2, height / 3 - 30);
       // horrorScene()?
     }
 
     if (scene === 10) {
-      for (let i = 255; i >= 0; i--) {
-        background(255, i, i)
-        textSize(100);
-        fill(255, 255 - i, 255 - i);
-        text("GAME\nOVER", width / 2, (height / 2) - 42);
-        sleep(10);
-      }
+      background(255, 0, 0)
+      textSize(100);
+      fill(255    );
+      text("GAME\nOVER", width / 2, (height / 2) - 42);
+
     }
 
 
@@ -141,7 +142,7 @@ function backgroundSetup() {
 function mousePressed() {
 
   if (scene === 10) {
-    scene = 1;
+    scene = 0;
   } else if (scene === 8) {
     scene = 7;
   } else {
@@ -152,7 +153,7 @@ function mousePressed() {
 
 (function theLoop (i) {
   setTimeout(function () {
-     
+
     if (--i) {          // If i > 0, keep going
       theLoop(i);       // Call the loop again, and pass it the current value of i
     }

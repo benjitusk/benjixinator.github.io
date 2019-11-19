@@ -16,11 +16,12 @@ class Ball {
                 this.x = width - 5;
                 console.log(this.x);
             } else { // If the ball is in the <<CENTER>>
-                this.x += map(noise(this.xoff), 0, 1, -5, 6.3);
+                this.x += map(noise(this.xoff), 0, 1, -5, 5.5);
             }
         }
             noStroke();
             fill(138, 43, 226);
             ellipse(this.x, this.y - (this.r / 5), this.r * 2);
+
     }
 }
