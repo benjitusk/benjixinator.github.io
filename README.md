@@ -1,4 +1,4 @@
-# benjixinator.github.io
+# Rain.js
 
 Hey, thanks for checking out my game!
 The gameplay is pretty simple: protect the ball from the rain.
