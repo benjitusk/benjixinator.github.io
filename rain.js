@@ -101,7 +101,7 @@ function draw() {
       fill(255);
       noStroke();
       textSize(60);
-      text("Paused...", width / 2, height / 2 - 30);
+      // text("Paused...", width / 2, height / 2 - 30);
       // text("Click anywhere to continue", width / 2, height / 2 + 30);
     }
 
